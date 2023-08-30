@@ -12,8 +12,7 @@ const Card = () => {
 
   const fetchData = async() =>{
     const res = await getMetaData();
-    if(res.error) return console.log(res.error);
-    console.log(res.response)
+    if(res.error) return alert(res.error);
     setMedaData(res.response);
   }
 

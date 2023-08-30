@@ -25,3 +25,16 @@ export const getMetaData = async() =>{
         return ({error: error.message || error})
     }
 }
+
+
+export const deleteMetaData = async(url) =>{
+    try {
+        const {data} = await client.delete('/deleteMetaTag',url);
+        return data;
+    } catch (error) {
+        const {response} = error;
+        if(response?.data) return response.data;
+
+        return ({error: error.message || error})
+    }
+}

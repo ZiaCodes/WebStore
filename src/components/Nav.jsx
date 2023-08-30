@@ -1,6 +1,7 @@
 import React from 'react'
 import {AiFillGithub} from 'react-icons/ai'
 import {PiStorefrontDuotone} from 'react-icons/pi'
+import { Link } from 'react-router-dom'
 
 const Nav = () => {
   return (
@@ -16,11 +17,15 @@ const Nav = () => {
           gap:'0.4em'
           }}>
           <PiStorefrontDuotone style={{fontSize:'2em'}}/>
+          <Link style={{textDecoration:'none',color:'#000'}} to='/'>
           Web Store 
+          </Link>
         </span>
         </div>
         <div className="menu">
-          <AiFillGithub  style={{fontSize:'0.6em'}}/>
+        <Link style={{textDecoration:'none',color:'#000'}} to='https://github.com/ZiaCodes'>
+          <AiFillGithub  style={{fontSize:'0.6em'}}/>  
+          </Link>
           </div>
     </div>
   )
