@@ -5,7 +5,7 @@ const CardBox = (props) =>{
     return(
         <div className="card">
         <div className="img">
-            <img src={props.poster} alt="poster"/>
+            <img src={props.poster} alt="poster" width="100px" height="100px"/>
           </div>
           <div className="title">
             <h1>
