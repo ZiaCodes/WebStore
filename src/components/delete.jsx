@@ -12,9 +12,9 @@ const Delete = () => {
     }
 
     const handleSubmitDelete = async() =>{
-        const res = await deleteMetaData(deleteURL);
-        if(res.error) return alert(res.error);
-        return alert("Deleted Successfully");
+            const res = await deleteMetaData(deleteURL);
+            if(res.error) return alert(res.error);
+            return alert("Deleted Successfully");
     }
 
   return (

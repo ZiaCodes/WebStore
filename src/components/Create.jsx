@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { createMetaDataForUrl } from '../apis/data'
 
+
 const Create = () => {
     const [userURL, setUserURL] = useState({
         url : "",
@@ -10,9 +11,9 @@ const Create = () => {
         setUserURL({...userURL,[name]:value});
     }
     const handleSubmitCreate = async() =>{ 
-        const res = await createMetaDataForUrl(userURL);
-        if(res.error) return alert(res.error);
-        return alert("Created Successfully");
+            const res = await createMetaDataForUrl(userURL);
+            if(res.error) return alert(res.error);
+            return alert("Created Successfully");
     }
 
   return (
