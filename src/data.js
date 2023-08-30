@@ -24,7 +24,7 @@ const data = [
         id:4,
         name:'Hospital Management System',
         poster:'https://www.leadsquared.com/wp-content/uploads/2023/03/hospital-management-system.jpg',
-        url:'https://vishalsingh6350.github.io/tsl_prg1_blogger/index.html',
+        url:'https://ingenious-ksr.github.io/TrainingTSL1/',
         description : "No Description Found"
     },
 
