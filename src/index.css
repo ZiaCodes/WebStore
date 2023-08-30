@@ -18,84 +18,11 @@ body{
     flex-wrap: wrap;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.13);
 }
-.navbar .logo img{
-    width: 160px;
-}
+
 .navbar .menu{
     font-size: 45px;
     margin-right: 12px;
     transition: 0.5s all;
-}
-.navbar .menu:hover{
-    transform: scale(1.1);
-    color: rgba(36, 0, 0, 0.712);
-}
-
-.searchbox{
-    width: 100%;
-    /* background-color: blueviolet; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-.searchbox input{
-    outline-style: none;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 1px solid rgb(19, 0, 0);
-    min-width: 300px;
-    font-size: 35px;
-}
-.searchbox input::placeholder{
-    color: rgb(71, 0, 14);
-    font-size: 15px;
-}
-.filter-card{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-.filter-card .action{
-    width: 100px;
-    margin: 5px;
-    text-align: center;
-    padding: 2px;
-    color: #fff;
-    border-radius: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: 01s all;
-}
-.filter-card .action:hover{
-    transform: scale(1.02);
-}
-.filter-card .action:nth-child(1){
-    background-color: rgb(48, 48, 48);
-}
-.filter-card .action:nth-child(2){
-    background-color: rgb(1, 40, 97);
-}
-.filter-card .action:nth-child(3){
-    background-color: rgb(104, 97, 0);
-}
-.filter-card .action:nth-child(4){
-    background-color: rgb(77, 2, 2);
-}
-.filter-card .action:nth-child(5){
-    background-color: rgb(20, 117, 1);
-}
-.filter-card .action:nth-child(6){
-    background-color: rgb(2, 85, 54);
-}
-.filter-card .action:nth-child(7){
-    background-color: rgb(54, 0, 90);
-}
-.filter-card .action:nth-child(8){
-    background-color: rgb(83, 1, 72);
 }
 
 .cardbox{
@@ -120,12 +47,16 @@ body{
     margin-top: 8px;
     margin-bottom: 8px;
 }
-.cardbox .card p{
+.cardbox .card .description  p{
     text-align: justify;
     color: rgba(0, 0, 24, 0.795);
     margin-top: 8px;
     margin-bottom: 8px;
     font-size: 0.95rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
 }
 .cardbox .card:hover{
     box-shadow: 0 0 0 rgb(0, 0, 0);
@@ -144,21 +75,6 @@ body{
     justify-content: center;
 }
 
-.cardbox .card .img .platform-rating{
-    position: absolute;
-    color: #fff;
-    display: flex;
-    padding: 5px;
-    color: red;
-
-}
-.cardbox .card .img .platform-rating .rating{
-    background-color: rgba(0, 0, 0, 0.473);
-    padding: 5px;
-    margin: 5px;
-    border-radius: 2px;
-    text-align: center;
-}
 .cardbox .card .btn{
     background-color: rgb(0, 70, 70);
     text-align: center;
@@ -166,6 +82,7 @@ body{
     margin-top: 20px;
     transition: 0.3s all;
     color: #fff;
+    cursor: pointer;
 }
 .cardbox .card .btn a {
     text-decoration: none;
@@ -174,4 +91,25 @@ body{
 .cardbox .card .btn:hover{
     background-color: rgb(0, 95, 95);
     letter-spacing: 1.01px;
+}
+
+.searchbox{
+    width: 100%;
+    /* background-color: blueviolet; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.searchbox input{
+    outline-style: none;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgb(19, 0, 0);
+    min-width: 300px;
+}
+.searchbox input::placeholder{
+    color: rgb(71, 0, 14);
+    font-size: 15px;
 }

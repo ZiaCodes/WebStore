@@ -9,7 +9,7 @@ const CardBox = (props) =>{
           </div>
           <div className="title">
             <h1>
-              {props.name}
+              {props.title}
               </h1>
             </div>
             <div className="description">

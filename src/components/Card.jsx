@@ -1,23 +1,40 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import CardBox from './CardBox';
-import MData from '../data'
+// import MData from '../data';
+import { getMetaData } from '../apis/data';
+
+
 
 
 const Card = () => {
-  // const [searchContent, setsearchContent] = useState("");
+  const [metaData, setMedaData] = useState([]);
+
+
+  const fetchData = async() =>{
+    const res = await getMetaData();
+    if(res.error) return console.log(res.error);
+    console.log(res.response)
+    setMedaData(res.response);
+  }
+
+  useEffect(()=>{
+    fetchData();
+  },[])
   return (
     <>
         
     <div className='cardbox'>
       {
-        MData.map((val)=>{
+        metaData.map((val)=>{
           return(
             <CardBox
-            key = {val.id}
+            key = {val._id}
             poster={val.poster}
-            name = {val.name}
+            title = {val.title}
             description = {val.description}
             url = {val.url}
+            author = {val.author}
+            theme = {val.theme}
             />
           )
         })
