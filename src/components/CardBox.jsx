@@ -18,7 +18,7 @@ const CardBox = (props) =>{
                 </p>
               </div>
               <div className="btn">
-                <a href={props.url}>
+                <a href={props.url} target='_blank'>
                   Live Preview
                 </a>
                 </div>
