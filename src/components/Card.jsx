@@ -2,13 +2,8 @@ import React,{useEffect, useState, Suspense} from 'react'
 const CardBox = React.lazy(() => import('./CardBox'));
 import { getMetaData } from '../apis/data';
 
-
-
-
 const Card = () => {
   const [metaData, setMedaData] = useState([]);
-
-
   const fetchData = async() =>{
     const res = await getMetaData();
     if(res.error) return alert(res.error);
@@ -19,13 +14,11 @@ const Card = () => {
     fetchData();
   },[])
   return (
-    <>
-        
+  <Suspense fallback={<p style={{textAlign:'center'}}>Content is almost Ready ...</p>}>
     <div className='cardbox'>
       {
         metaData.map((val)=>{
           return(
-          <Suspense fallback={<p style={{textAlign:'center'}}>Content is almost Ready ...</p>}>
             <CardBox
             key = {val._id}
             poster={val.poster}
@@ -35,12 +28,11 @@ const Card = () => {
             author = {val.author}
             theme = {val.theme}
             />
-            </Suspense>
           )
         })
       }
     </div>
-    </>
+  </Suspense>
   )
 }
 
