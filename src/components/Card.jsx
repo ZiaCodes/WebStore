@@ -1,6 +1,5 @@
-import React,{useEffect, useState} from 'react'
-import CardBox from './CardBox';
-// import MData from '../data';
+import React,{useEffect, useState, Suspense} from 'react'
+const CardBox = React.lazy(() => import('./CardBox'));
 import { getMetaData } from '../apis/data';
 
 
@@ -26,6 +25,7 @@ const Card = () => {
       {
         metaData.map((val)=>{
           return(
+          <Suspense fallback={<p style={{textAlign:'center'}}>Content is almost Ready ...</p>}>
             <CardBox
             key = {val._id}
             poster={val.poster}
@@ -35,6 +35,7 @@ const Card = () => {
             author = {val.author}
             theme = {val.theme}
             />
+            </Suspense>
           )
         })
       }
