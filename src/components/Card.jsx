@@ -9,6 +9,7 @@ const Card = () => {
     if(res.error) return alert(res.error);
     setMedaData(res.response);
   }
+  
 
   useEffect(()=>{
     fetchData();
