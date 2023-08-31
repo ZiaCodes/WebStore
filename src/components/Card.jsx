@@ -1,6 +1,6 @@
 import React,{useEffect, useState, Suspense} from 'react'
-const CardBox = React.lazy(() => import('./CardBox'));
 import { getMetaData } from '../apis/data';
+const CardBox = React.lazy(() => import('./CardBox'));
 
 const Card = () => {
   const [metaData, setMedaData] = useState([]);
