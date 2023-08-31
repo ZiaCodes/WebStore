@@ -1,11 +1,17 @@
 import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 
 const CardBox = (props) =>{
     return(
         <div className="card">
         <div className="img">
-            <img src={props.poster} alt="poster" width="100px" height="100px"/>
+          <LazyLoadImage
+            src={props.poster}
+            alt="poster"
+            width="100px" 
+            height="100px"
+          />
           </div>
           <div className="title">
             <h1>
