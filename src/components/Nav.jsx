@@ -1,9 +1,11 @@
-import React from 'react'
-import {AiFillGithub} from 'react-icons/ai'
-import {PiStorefrontDuotone} from 'react-icons/pi'
+import React,{useState} from 'react'
+import {IoMdArrowRoundBack} from 'react-icons/io'
+import {PiStorefrontDuotone} from 'react-icons/pi';
+import {MdLibraryAdd} from 'react-icons/md'
 import { Link } from 'react-router-dom'
 
 const Nav = () => {
+  const [click,setClick] = useState(false);
   return (
     <div className='navbar'>
       <div className="logo">
@@ -23,10 +25,27 @@ const Nav = () => {
         </span>
         </div>
         <div className="menu">
-        <Link style={{textDecoration:'none',color:'#000'}} to='https://github.com/ZiaCodes'>
-          <AiFillGithub  style={{fontSize:'0.6em'}}/>  
-          </Link>
-          </div>
+          {
+            click ? (
+              <Link 
+                style={{textDecoration:'none',color:'#000'}} 
+                to='http://localhost:3000/8918027179_ziacodes'
+                onClick={() => setClick(!click)}
+              >
+              <MdLibraryAdd style={{fontSize:'0.6em'}}/>  
+              </Link>
+            ) : (
+              <Link 
+                style={{textDecoration:'none',color:'#000'}} 
+                to='/'
+                onClick={() => setClick(!click)}
+              >
+              <IoMdArrowRoundBack style={{fontSize:'0.6em'}}/>  
+              </Link>
+            )
+          }
+          
+        </div>
     </div>
   )
 }

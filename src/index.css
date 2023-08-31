@@ -23,6 +23,8 @@ body{
     font-size: 45px;
     margin-right: 12px;
     transition: 0.5s all;
+    display: flex;
+    gap: 1em;
 }
 
 .cardbox{
