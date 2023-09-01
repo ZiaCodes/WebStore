@@ -1,13 +1,20 @@
 import React,{useEffect, useState, Suspense} from 'react'
 import { getMetaData } from '../apis/data';
+import Loading from './Loading';
 const CardBox = React.lazy(() => import('./CardBox'));
 
 const Card = () => {
   const [metaData, setMedaData] = useState([]);
+  const [isLoading , setIsLoading] = useState(false);
   const fetchData = async() =>{
+    setIsLoading(true);
     const res = await getMetaData();
-    if(res.error) return alert(res.error);
+    if(res.error){
+      setIsLoading(false);
+      return alert(res.error);
+    }
     setMedaData(res.response);
+    setIsLoading(false);
   }
   
 
@@ -16,7 +23,9 @@ const Card = () => {
   },[])
   return (
   <Suspense fallback={<p style={{textAlign:'center'}}>Content is almost Ready ...</p>}>
-    <div className='cardbox'>
+    {
+      isLoading ? <Loading/> : (
+        <div className='cardbox'>
       {
         metaData.map((val)=>{
           return(
@@ -33,6 +42,8 @@ const Card = () => {
         })
       }
     </div>
+      )
+    }
   </Suspense>
   )
 }

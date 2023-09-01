@@ -97,11 +97,10 @@ body{
 
 .searchbox{
     width: 100%;
-    /* background-color: blueviolet; */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 2em;
 }
 .searchbox input{
     outline-style: none;
@@ -110,19 +109,24 @@ body{
     border-right: 0;
     border-bottom: 1px solid rgb(19, 0, 0);
     min-width: 300px;
+    padding: 1em;
 }
 .searchbox input::placeholder{
     color: rgb(71, 0, 14);
     font-size: 15px;
+    opacity: 0.5;
 }
-.loader{
+.LoadingWrapper{
     height: 100vh;
     font-size: 2em;
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: loading 0.8s infinite ease-in;
     overflow: hidden;
+}
+
+.loader{
+    animation: loading 0.8s infinite ease-in;
 }
 
 @keyframes loading {

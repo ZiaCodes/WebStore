@@ -1,8 +1,4 @@
-exports.isValidUrl = (string) =>{
-    try {
-        new URL(string);
-        return true;
-    } catch (err) {
-        return false;
+exports.isValidEmail = (email) =>{
+    const isValid = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_+.~#?&=]*)$/;
+    return isValid.test(email);
     }
-}

@@ -11,7 +11,7 @@ function App() {
     <NavBar/>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/8918027179_ziacodes" element={<Ziacodes />} />
+      <Route path="/create" element={<Ziacodes />} />
     </Routes>
     </>
   );

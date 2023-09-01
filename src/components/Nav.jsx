@@ -5,7 +5,14 @@ import {MdLibraryAdd} from 'react-icons/md'
 import { Link } from 'react-router-dom'
 
 const Nav = () => {
-  const [click,setClick] = useState(false);
+  const [click,setClick] = useState(true);
+
+  const onShowLink = () =>{
+    if(click)
+      setClick(false);
+      else
+        setClick(true);
+  }
   return (
     <div className='navbar'>
       <div className="logo">
@@ -29,8 +36,8 @@ const Nav = () => {
             click ? (
               <Link 
                 style={{textDecoration:'none',color:'#000'}} 
-                to='http://localhost:3000/8918027179_ziacodes'
-                onClick={() => setClick(!click)}
+                to='/create'
+                onClick={onShowLink}
               >
               <MdLibraryAdd style={{fontSize:'0.6em'}}/>  
               </Link>
@@ -38,7 +45,7 @@ const Nav = () => {
               <Link 
                 style={{textDecoration:'none',color:'#000'}} 
                 to='/'
-                onClick={() => setClick(!click)}
+                onClick={onShowLink}
               >
               <IoMdArrowRoundBack style={{fontSize:'0.6em'}}/>  
               </Link>

@@ -3,8 +3,8 @@ import {AiOutlineLoading3Quarters} from 'react-icons/ai';
 
 const Loading = () => {
   return (
-    <div className='loader'>
-        <AiOutlineLoading3Quarters/>
+    <div className='LoadingWrapper'>
+        <AiOutlineLoading3Quarters className="loader"/>
     </div>
   )
 }

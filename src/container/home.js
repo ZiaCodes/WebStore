@@ -9,9 +9,6 @@ const Home = () => {
     </p>}>
     <Card/>
     </Suspense>
-    <p style={{textAlign:'center',marginTop:'2em',padding:'1em'}}>
-      More are coming soon...
-    </p>
     </>
   )
 }
