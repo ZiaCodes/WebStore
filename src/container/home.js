@@ -5,7 +5,8 @@ const Home = () => {
   return (
     <>
     <Suspense fallback={<p style={{textAlign:'center'}}>
-    Please Wait, Let me cooking something for You.
+    Please Wait 👀,
+    We are cooking 👨‍🍳 something ✨
     </p>}>
     <Card/>
     </Suspense>

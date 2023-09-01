@@ -22,7 +22,7 @@ const Card = () => {
     fetchData();
   },[])
   return (
-  <Suspense fallback={<p style={{textAlign:'center'}}>Content is almost Ready ...</p>}>
+  <Suspense fallback={<p style={{textAlign:'center'}}>Almost Ready 😋 </p>}>
     {
       isLoading ? <Loading/> : (
         <div className='cardbox'>
