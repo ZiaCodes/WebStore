@@ -66,11 +66,7 @@ const Card = () => {
             ◀ Prev
         </div>
         <div className="pages">
-          {
-            [(metaData.length/10)].map((_,i)=>{
-              return <p>{i+1}</p>
-            })
-          }
+          
         </div>
         <div onClick={nextPage} className="foward">
             Next ▶
