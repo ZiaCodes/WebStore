@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { createMetaDataForUrl } from '../apis/data';
 import { isValidEmail } from '../util/helper';
 import {AiOutlineLoading3Quarters} from 'react-icons/ai';
+import Container from './Container';
 
 const Create = () => {
     const [isLoading , setIsLoading] = useState(false);
@@ -26,27 +27,27 @@ const Create = () => {
     }
 
   return (
-        <div className="card">
-            <div className='title'>
-                <p style={{textAlign:'center'}}>
-                Past URL to Create
-                </p>
-            </div>
-            <div className="searchbox">
-                <input 
-                type="text"
-                value={userURL.url}
-                name="url"
-                onChange={handleChangeCreate}
-                placeholder='https://example.com'
-                />
-            </div>
-           <div className="btn" onClick={!isLoading ? handleSubmitCreate : null}>
-                {
-                    isLoading ? (<AiOutlineLoading3Quarters className='loader'/>) : "Create"  
-                }
-            </div>
+    <Container>
+        <div className='title'>
+            <p style={{textAlign:'center'}}>
+            Past URL to Create
+            </p>
         </div>
+        <div className="searchbox">
+            <input 
+            type="text"
+            value={userURL.url}
+            name="url"
+            onChange={handleChangeCreate}
+            placeholder='https://example.com'
+            />
+        </div>
+        <div className="btn" onClick={!isLoading ? handleSubmitCreate : null}>
+            {
+                isLoading ? (<AiOutlineLoading3Quarters className='loader'/>) : "Create"  
+            }
+        </div>
+    </Container>
   )
 }
 

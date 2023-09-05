@@ -27,7 +27,7 @@ const Nav = () => {
           }}>
           <PiStorefrontDuotone style={{fontSize:'2em'}}/>
           <Link style={{textDecoration:'none',color:'#000'}} to='/'>
-          Web Store 
+          Web Store
           </Link>
         </span>
         </div>

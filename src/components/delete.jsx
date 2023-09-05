@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { deleteMetaData } from '../apis/data'
+import Container from './Container'
 
 const Delete = () => {
     const [deleteURL,setDeleteURL] = useState({
@@ -18,25 +19,25 @@ const Delete = () => {
     }
 
   return (
-        <div className="card">
-            <div className='title'>
-                <p style={{textAlign:'center'}}>
-                Past URL to Delete
-                </p>
-            </div>
-            <div className="searchbox">
-                <input 
-                value={deleteURL.url}
-                onChange={handleChangeDelete}
-                type="text" 
-                name='url'
-                placeholder='https://example.com'
-                />
-            </div>
-            <div className="btn" onClick={handleSubmitDelete}>
-                Delete
-            </div>
+    <Container>
+        <div className='title'>
+            <p style={{textAlign:'center'}}>
+            Past URL to Delete
+            </p>
         </div>
+        <div className="searchbox">
+            <input 
+            value={deleteURL.url}
+            onChange={handleChangeDelete}
+            type="text" 
+            name='url'
+            placeholder='https://example.com'
+            />
+        </div>
+        <div className="btn" onClick={handleSubmitDelete}>
+            Delete
+        </div>
+    </Container>
   )
 }
 

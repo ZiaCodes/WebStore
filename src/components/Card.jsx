@@ -1,11 +1,15 @@
 import React,{useEffect, useState, Suspense} from 'react'
 import { getMetaData } from '../apis/data';
 import Loading from './Loading';
-const CardBox = React.lazy(() => import('./CardBox'));
+import PageNumber from './PageNumber';
 
+const CardBox = React.lazy(() => import('./CardBox'));
 const Card = () => {
   const [metaData, setMedaData] = useState([]);
+  const [page,setPage] =  useState(1)
   const [isLoading , setIsLoading] = useState(false);
+
+  // Load the data 
   const fetchData = async() =>{
     setIsLoading(true);
     const res = await getMetaData();
@@ -16,18 +20,31 @@ const Card = () => {
     setMedaData(res.response);
     setIsLoading(false);
   }
+
+  // next pagination
+  const nextPage = () =>{
+      setPage( page + 1);
+  }
+
+  //  previus Pagination
+  const prevPage = () =>{
+    setPage(page - 1);
+  }
   
 
   useEffect(()=>{
     fetchData();
   },[])
+
   return (
-  <Suspense fallback={<p style={{textAlign:'center'}}>Almost Ready 😋 </p>}>
+  <Suspense fallback={<p style={{textAlign:'center'}}>
+    Almost Ready 😋 
+    </p>}>
     {
       isLoading ? <Loading/> : (
-        <div className='cardbox'>
+      <div className='cardbox'>
       {
-        metaData.map((val)=>{
+        metaData.slice(page * 10 - 10 ,page * 10).map((val)=>{
           return(
             <CardBox
             key = {val._id}
@@ -41,7 +58,26 @@ const Card = () => {
           )
         })
       }
-    </div>
+      
+      { 
+      metaData.length && (
+      <PageNumber>
+        <div onClick={prevPage} className="back">
+            ◀ Prev
+        </div>
+        <div className="pages">
+          {
+            [(metaData.length/10)].map((_,i)=>{
+              return <p>{i+1}</p>
+            })
+          }
+        </div>
+        <div onClick={nextPage} className="foward">
+            Next ▶
+        </div>
+      </PageNumber>)
+      }
+      </div>
       )
     }
   </Suspense>

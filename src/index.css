@@ -8,15 +8,20 @@ body{
     font-family: 'Be Vietnam Pro', sans-serif;
     user-select: none;
     background-color: rgba(255, 255, 255, 0.308);
+    position:relative;
+    min-height:100vh;
 }
 .navbar{
     width: 100%;
+    position: fixed;
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 50px;
     flex-wrap: wrap;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.13);
+    backdrop-filter: blur(5px);
 }
 
 .navbar .menu{
@@ -32,6 +37,8 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    margin-top: 50px;
 }
 .cardbox .card{
     width: 350px;
@@ -133,4 +140,28 @@ body{
     to{
         transform: rotate(360deg);
     }
+}
+
+/* Page Number Footer */
+.pageContainer{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 1em;
+}
+.back, .foward {
+    cursor: pointer;
+}
+.back:hover,
+.foward:hover{
+    text-decoration: underline;
+}
+.pages{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
 }
